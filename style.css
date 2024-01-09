@@ -1,0 +1,291 @@
+/* Sets & Presets */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  /*Text*/
+  font-size: 62.5%; /* 10px based */
+  --font-primary: "Mulish", sans-serif;
+
+  /* Colors */
+  --color1-primary: #b52184;
+  --color2-secondary: #312d64;
+  --color3-light-gray: #f9f4fb;
+  --color4-white: #ffffff;
+  --gradient-blue: linear-gradient(96deg, #343193 0%, #302c63 99%);
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: 1.6rem;
+  background-color: var(--color3-light-gray);
+  color: var(--color2-secondary);
+}
+
+#app {
+  height: 100vh;
+  /* overflow-y: scroll; */
+}
+
+.container {
+  max-width: 43rem;
+  margin: 0 auto;
+  padding: 5rem 4rem;
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+h2 {
+  font-size: 2.9rem;
+}
+
+h1,
+h2 {
+  font-weight: 900;
+  color: var(--color1-primary);
+}
+
+button {
+  font-weight: 700;
+}
+
+/* Header */
+header .container {
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-image img {
+  width: 80%;
+  margin-bottom: 2rem;
+}
+
+header p {
+  font-size: 2rem;
+}
+
+header .arrow-down {
+  margin: 3.5rem 0 9rem;
+  transition: all 500ms ease;
+}
+
+header .arrow-down:hover {
+  transform: scale(1.1);
+}
+
+/* Main */
+
+main {
+  background: var(--gradient-blue);
+}
+
+main .container {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.infobox {
+  background-color: var(--color4-white);
+  padding: 4rem;
+  border-radius: 2rem;
+}
+
+.infobox img {
+  margin-bottom: 2rem;
+  max-width: 8rem;
+}
+
+.infobox h2 {
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+footer h2 {
+  margin-bottom: 3rem;
+}
+
+footer .container {
+  padding: 7rem inherit;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.4rem;
+}
+
+.input-wrapper ion-icon {
+  position: absolute;
+  font-size: 2.4rem;
+  color: var(--color1-primary);
+  margin-left: 1.5rem;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  height: 5rem;
+  padding: 1.2rem 1.4rem 1.2rem 4.5rem;
+  border: 0.15rem solid var(--color2-secondary);
+  border-radius: 1.6rem;
+}
+
+input,
+textarea,
+input::placeholder,
+textarea::placeholder {
+  font-family: var(--font-primary);
+  font-size: 1.6rem;
+  color: var(--color2-secondary);
+}
+
+textarea {
+  height: 12.6rem;
+  padding: 1.2rem 1.4rem;
+}
+
+form button {
+  background-color: var(--color2-secondary);
+  font-family: var(--font-primary);
+  font-size: 1.8rem;
+  color: var(--color4-white);
+  padding: 1.6rem 2rem;
+  margin-top: 2.4rem;
+  border: none;
+  border-radius: 1.6rem;
+  transition: all 0.5s ease;
+}
+
+form button:hover {
+  background-color: var(--color1-primary);
+  transform: scale(1.05);
+}
+
+.bottom-bar {
+  background: var(--gradient-blue);
+  color: var(--color4-white);
+  text-align: center;
+  padding: 2rem;
+}
+
+.bottom-bar a {
+  text-decoration: none;
+  color: greenyellow;
+}
+
+/* Desktop Media Queries */
+@media (min-width: 770px) {
+  /* Sets */
+  .container {
+    max-width: 1200px;
+  }
+
+  h1 {
+    font-size: 5.5rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+
+  /* Header */
+  header .container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    text-align: initial;
+  }
+
+  .hero-image {
+    text-align: right;
+    margin-right: -4rem;
+    margin-bottom: 3rem;
+    flex: 1;
+  }
+
+  .hero-image img {
+    width: 100%;
+  }
+
+  header .infos {
+    flex: 1;
+  }
+
+  header p {
+    font-size: 3.2rem;
+    margin-bottom: 17rem;
+  }
+
+  header .arrow-down {
+    margin-bottom: 0;
+  }
+
+  /* Main */
+  main .container {
+    flex-direction: row;
+  }
+
+  /* Footer */
+  footer {
+    background: url(./assets/background-stars.png) no-repeat right center;
+  }
+
+  footer #contact {
+    max-width: 50%;
+  }
+}
+
+/* Animations */
+.hero-image {
+  animation: fade-in 1s ease-in;
+}
+
+.infos h1,
+.infos p {
+  animation: fade-in 1s ease-in 1s backwards;
+}
+
+.infos .arrow-down {
+  animation: fade-in 1s ease-in 1.5s backwards, bounce 1s ease 2s backwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

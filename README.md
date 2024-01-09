@@ -5,7 +5,7 @@ Projeto desenvolvido no curso Explorer da Rocketseat, de um layout site simples 
 </p>
 
 <p align="center">
-Veja o resultado <a href="" target="_blank">aqui.</a>
+Veja o resultado <a href="https://rafaverde.github.io/explore-sem-limites" target="_blank">aqui.</a>
 </p>
 
 <p align="center">
